@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خريطة المجازر في سوريا</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 100vh;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // إنشاء الخريطة وتحديد مركزها الافتراضي
+        const map = L.map('map').setView([35.0, 38.0], 7);
+
+        // إضافة طبقة خرائط OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // بيانات المجازر
+        const massacres = [
+            {
+                name: "مجزرة حماة",
+                date: "فبراير 1982",
+                description: "قتل فيها حوالي 30,000 مدني.",
+                coordinates: [35.1338, 36.7578]
+            },
+            {
+                name: "مجزرة الغوطة الكيميائية",
+                date: "21 أغسطس 2013",
+                description: "قتل فيها حوالي 1,400 مدني، معظمهم أطفال ونساء.",
+                coordinates: [33.5186, 36.3536]
+            },
+            {
+                name: "مجزرة داريا الكبرى",
+                date: "أغسطس 2012",
+                description: "قتل فيها أكثر من 500 مدني بالإعدامات الميدانية والقصف.",
+                coordinates: [33.4708, 36.2353]
+            },
+            {
+                name: "مجزرة الحولة",
+                date: "مايو 2012",
+                description: "قتل فيها أكثر من 100 مدني، بينهم أطفال ونساء.",
+                coordinates: [34.2763, 36.4282]
+            },
+            {
+                name: "مجزرة خان شيخون",
+                date: "أبريل 2017",
+                description: "قتل فيها أكثر من 80 مدنيًا بالأسلحة الكيميائية.",
+                coordinates: [35.4413, 36.6501]
+            }
+        ];
+
+        // إضافة العلامات على الخريطة
+        massacres.forEach(massacre => {
+            L.marker(massacre.coordinates)
+                .addTo(map)
+                .bindPopup(`
+                    <b>${massacre.name}</b><br>
+                    <i>التاريخ: ${massacre.date}</i><br>
+                    <p>${massacre.description}</p>
+                `);
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خريطة المجازر في سوريا</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 100vh;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // إنشاء الخريطة وتحديد مركزها الافتراضي
+        const map = L.map('map').setView([35.0, 38.0], 7);
+
+        // إضافة طبقة خرائط OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // بيانات المجازر
+        const massacres = [
+            {
+                name: "مجزرة حماة",
+                date: "فبراير 1982",
+                description: "قتل فيها حوالي 30,000 مدني.",
+                coordinates: [35.1338, 36.7578]
+            },
+            {
+                name: "مجزرة الغوطة الكيميائية",
+                date: "21 أغسطس 2013",
+                description: "قتل فيها حوالي 1,400 مدني، معظمهم أطفال ونساء.",
+                coordinates: [33.5186, 36.3536]
+            },
+            {
+                name: "مجزرة داريا الكبرى",
+                date: "أغسطس 2012",
+                description: "قتل فيها أكثر من 500 مدني بالإعدامات الميدانية والقصف.",
+                coordinates: [33.4708, 36.2353]
+            },
+            {
+                name: "مجزرة الحولة",
+                date: "مايو 2012",
+                description: "قتل فيها أكثر من 100 مدني، بينهم أطفال ونساء.",
+                coordinates: [34.2763, 36.4282]
+            },
+            {
+                name: "مجزرة خان شيخون",
+                date: "أبريل 2017",
+                description: "قتل فيها أكثر من 80 مدنيًا بالأسلحة الكيميائية.",
+                coordinates: [35.4413, 36.6501]
+            }
+        ];
+
+        // إضافة العلامات على الخريطة
+        massacres.forEach(massacre => {
+            L.marker(massacre.coordinates)
+                .addTo(map)
+                .bindPopup(`
+                    <b>${massacre.name}</b><br>
+                    <i>التاريخ: ${massacre.date}</i><br>
+                    <p>${massacre.description}</p>
+                `);
+        });
+    </script>
+</body>
+</html>
