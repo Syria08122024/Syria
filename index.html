@@ -399,7 +399,7 @@
         graves.forEach(grave => {
             L.circleMarker(grave.coords, {
                 color: 'red',
-                radius: 8
+                radius: 12
             }).addTo(map)
               .bindPopup(`<b>${grave.name}</b><br>${grave.description}`);
         });
